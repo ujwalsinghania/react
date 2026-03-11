@@ -63,6 +63,4 @@ This pattern divides components into two distinct categories:
 - **Predictability**: It's easy to know exactly where data is fetched (the Container) and where styling is applied (the Presentational).
 - **Testability**: Purely presentational components are extremely easy to test and mocked data can be passed as props.
 
-> **Note on Hooks**: With the advent of React Hooks (`useEffect`, `useState`, custom hooks), the strict need for separate Container components has diminished, as logic can now be extracted into Custom Hooks directly inside Presentational components. An example of this modern approach is included in the file!
-
 ---

@@ -81,32 +81,6 @@ npx nx graph
 
 ---
 
-## Screenshots
-
-### Hotel Exploration App
-
-**Listing Page**
-
-![Hotel listing page](./screenshots/hotel-listing.png)
-
-**Hotel Detail Page**
-
-![Hotel detail page](./screenshots/hotel-detail.png)
-
----
-
-### Admin Dashboard
-
-**Login Page**
-
-![Admin login page](./screenshots/admin-login.png)
-
-**Dashboard — Create Listing**
-
-![Admin dashboard](./screenshots/admin-dashboard.png)
-
----
-
 ## Tech Stack
 
 | Tool | Role |
@@ -133,3 +107,30 @@ npx nx serve admin-dashboard
 # Build everything
 npx nx run-many -t build
 ```
+---
+
+## Screenshots
+
+### Hotel Exploration App
+
+**Listing Page**
+
+<img src="./screenshots/hotel-listing.png" width="600" alt="Hotel listing page" />   
+
+**Hotel Detail Page**
+
+<img src="./screenshots/hotel-detail.png" width="600" alt="Hotel detail page" />  
+
+---
+
+### Admin Dashboard
+
+**Login Page**
+
+<img src="./screenshots/admin-login.png" width="600" alt="Admin login page" />   
+
+**Dashboard — Create Listing**
+
+<img src="./screenshots/admin-dashboard.png" width="600" alt="Admin dashboard" />  
+
+---

@@ -87,13 +87,11 @@ npx nx graph
 
 **Listing Page**
 
-<!-- screenshot: hotel listing grid with search bar -->
-> _Screenshot coming soon_
+![Hotel listing page](./screenshots/hotel-listing.png)
 
 **Hotel Detail Page**
 
-<!-- screenshot: hotel detail with booking widget -->
-> _Screenshot coming soon_
+![Hotel detail page](./screenshots/hotel-detail.png)
 
 ---
 
@@ -101,13 +99,11 @@ npx nx graph
 
 **Login Page**
 
-<!-- screenshot: login form -->
-> _Screenshot coming soon_
+![Admin login page](./screenshots/admin-login.png)
 
 **Dashboard — Create Listing**
 
-<!-- screenshot: property creation form -->
-> _Screenshot coming soon_
+![Admin dashboard](./screenshots/admin-dashboard.png)
 
 ---
 

@@ -7,10 +7,10 @@
       "path": "./apps/hotel-exploration"
     },
     {
-      "path": "./apps/dashboard"
+      "path": "./packages/common"
     },
     {
-      "path": "./packages/common"
+      "path": "./apps/admin-dashboard"
     }
   ]
 }

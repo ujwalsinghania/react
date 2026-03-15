@@ -1,0 +1,12 @@
+{
+  "name": "@org/dashboard",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/dashboard/src",
+  "projectType": "application",
+  "implicitDependencies": ["common"],
+  "targets": {
+    "build": {
+      "dependsOn": ["common:build"]
+    }
+  }
+}

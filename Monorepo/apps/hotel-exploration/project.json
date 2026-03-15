@@ -1,0 +1,12 @@
+{
+  "name": "@org/hotel-exploration",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/hotel-exploration/src",
+  "projectType": "application",
+  "implicitDependencies": ["common"],
+  "targets": {
+    "build": {
+      "dependsOn": ["common:build"]
+    }
+  }
+}

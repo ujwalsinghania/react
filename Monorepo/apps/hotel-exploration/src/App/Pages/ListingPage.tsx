@@ -1,19 +1,18 @@
-import { useState } from 'react';
+// router
 import { useNavigate } from 'react-router-dom';
-import { HOTELS } from '../data';
-import { titleCase } from '@local/common/utils';
+
+// hooks
+import { useListings } from '../Hooks/useListings';
+
+// components
 import { Pagination } from '@local/common/components';
 
-const ListingPage = () => {
-  const [search, setSearch] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const navigate = useNavigate();
+// utils
+import { titleCase } from '@local/common/utils';
 
-  const filteredHotels = HOTELS.filter(
-    (hotel) =>
-      hotel.name.toLowerCase().includes(search.toLowerCase()) ||
-      hotel.location.toLowerCase().includes(search.toLowerCase())
-  );
+const ListingPage = () => {
+  const navigate = useNavigate();
+  const { search, setSearch, currentPage, setCurrentPage, filteredHotels } = useListings();
 
   return (
     <div className="space-y-12 pb-12">
@@ -63,7 +62,7 @@ const ListingPage = () => {
         </button>
       </div>
 
-      {/* Grid of properties (Airbnb style images and text) */}
+      {/* Grid of properties */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-10 mt-8">
         {filteredHotels.map((hotel) => (
           <div
@@ -101,8 +100,7 @@ const ListingPage = () => {
               <p className="text-[15px] text-[#717171] leading-5 mt-0.5 truncate">
                 {hotel.name}
               </p>
-              <p className="text-[15px] text-[#717171] leading-5">2-7 Nov</p>{' '}
-              {/* mock dates */}
+              <p className="text-[15px] text-[#717171] leading-5">2-7 Nov</p>
               <div className="mt-1 flex items-baseline gap-1">
                 <span className="font-semibold text-[15px] text-[#222222]">
                   ${hotel.price}

@@ -2,7 +2,19 @@
   "name": "@org/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many -t dev",
+    "dev:hotel": "nx dev @org/hotel-exploration",
+    "dev:admin": "nx dev @org/dashboard",
+    "build": "nx run-many -t build",
+    "build:hotel": "nx build @org/hotel-exploration",
+    "build:admin": "nx build @org/dashboard",
+    "build:common": "nx build common",
+    "test": "nx run-many -t test",
+    "typecheck": "nx run-many -t typecheck",
+    "preview": "nx run-many -t preview",
+    "format": "prettier --write \"**/*.{ts,tsx,json,css,md}\""
+  },
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.14.5",

@@ -1,17 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { cn } from '../utils/cn';
+// react
+import { useState, useRef, useEffect, type ReactNode } from 'react';
+
+// utils
+import { cn } from '../Utils/Cn';
 
 export interface PopoverProps {
-  trigger: React.ReactNode;
-  content: React.ReactNode;
+  trigger: ReactNode;
+  content: ReactNode;
   align?: 'left' | 'right';
 }
 
-export const Popover: React.FC<PopoverProps> = ({
-  trigger,
-  content,
-  align = 'right',
-}) => {
+export const Popover = ({ trigger, content, align = 'right' }: PopoverProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
 
@@ -50,4 +49,4 @@ export const Popover: React.FC<PopoverProps> = ({
       )}
     </div>
   );
-};
+}

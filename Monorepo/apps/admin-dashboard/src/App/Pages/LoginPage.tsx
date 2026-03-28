@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
+// hooks
+import { useLogin } from '../Hooks/useLogin';
+
+// components
 import { TextInput, Card } from '@local/common/components';
 
 interface LoginPageProps {
   onLogin: () => void;
 }
 
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      onLogin();
-    }, 1000);
-  };
+const LoginPage = ({ onLogin }: LoginPageProps) => {
+  const { loading, handleLogin } = useLogin(onLogin);
 
   return (
     <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-slate-100 to-blue-50">
@@ -27,28 +21,26 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-6">
           <TextInput
             label="Email"
             placeholder="owner@example.com"
             type="email"
-            required
           />
           <TextInput
             label="Password"
             placeholder="••••••••"
             type="password"
-            required
           />
 
           <button
-            type="submit"
+            onClick={handleLogin}
             disabled={loading}
             className="w-full bg-slate-900 text-white py-3 rounded-lg font-bold hover:bg-black transition-colors disabled:opacity-50"
           >
             {loading ? 'Authenticating...' : 'Sign In'}
           </button>
-        </form>
+        </div>
 
         <div className="text-center">
           <p className="text-xs text-slate-400">

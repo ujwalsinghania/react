@@ -1,9 +1,12 @@
+// router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ListingPage from './pages/ListingPage';
-import DetailPage from './pages/DetailPage';
-import { Popover } from '@local/common/components';
 
-export function App() {
+// components
+import { Popover } from '@local/common/components';
+import ListingPage from './Pages/ListingPage';
+import DetailPage from './Pages/DetailPage';
+
+export const App = () => {
   return (
     <Router>
       <div className="min-h-screen bg-white text-[#222222] font-sans antialiased">

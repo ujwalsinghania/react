@@ -18,9 +18,9 @@
     "strict": true,
     "target": "es2022",
     "paths": {
-      "@local/common": ["packages/common/src/index.ts"],
-      "@local/common/components": ["packages/common/src/lib/components/index.ts"],
-      "@local/common/utils": ["packages/common/src/lib/utils/index.ts"]
+      "@local/common": ["packages/common/src/Index.ts"],
+      "@local/common/components": ["packages/common/src/Lib/Components/Index.ts"],
+      "@local/common/utils": ["packages/common/src/Lib/Utils/Index.ts"]
     }
   }
 }

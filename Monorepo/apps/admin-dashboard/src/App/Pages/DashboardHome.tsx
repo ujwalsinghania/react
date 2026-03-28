@@ -1,30 +1,15 @@
-import React, { useState } from 'react';
+// hooks
+import { useCreateListing } from '../Hooks/useCreateListing';
+
+// components
 import { TextInput, Checkbox } from '@local/common/components';
-import { slugify } from '@local/common/utils';
 
 interface DashboardHomeProps {
   onLogout: () => void;
 }
 
-const DashboardHome: React.FC<DashboardHomeProps> = ({ onLogout }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    location: '',
-    price: '',
-    description: '',
-    available: false,
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(
-      `Listing Created: ${slugify(formData.name)}\nData: ${JSON.stringify(
-        formData,
-        null,
-        2
-      )}`
-    );
-  };
+const DashboardHome = ({ onLogout }: DashboardHomeProps) => {
+  const { formData, setFormData, handlePublish } = useCreateListing();
 
   return (
     <div className="flex">
@@ -67,10 +52,7 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onLogout }) => {
             </button>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-8 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm"
-          >
+          <div className="space-y-8 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <TextInput
                 label="Property Name"
@@ -79,7 +61,6 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onLogout }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                required
               />
               <TextInput
                 label="City/Location"
@@ -88,7 +69,6 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onLogout }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, location: e.target.value })
                 }
-                required
               />
             </div>
 
@@ -101,7 +81,6 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onLogout }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, price: e.target.value })
                 }
-                required
               />
               <div className="flex items-end pb-2">
                 <Checkbox
@@ -129,20 +108,17 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onLogout }) => {
             </div>
 
             <div className="pt-4 flex justify-end gap-4">
-              <button
-                type="button"
-                className="px-6 py-2.5 text-slate-500 hover:bg-slate-50 rounded-lg transition-colors"
-              >
+              <button className="px-6 py-2.5 text-slate-500 hover:bg-slate-50 rounded-lg transition-colors">
                 Save Draft
               </button>
               <button
-                type="submit"
+                onClick={handlePublish}
                 className="px-10 py-2.5 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all hover:-translate-y-0.5"
               >
                 Publish Listing
               </button>
             </div>
-          </form>
+          </div>
 
           {/* Preview Placeholder */}
           <div className="border-2 border-dashed border-slate-200 rounded-2xl p-10 text-center text-slate-300">

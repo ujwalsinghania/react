@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import LoginPage from './pages/LoginPage';
-import DashboardHome from './pages/DashboardHome';
+// react
+import { useState } from 'react';
 
-export function App() {
+// components
+import LoginPage from './Pages/LoginPage';
+import DashboardHome from './Pages/DashboardHome';
+
+export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
@@ -14,6 +17,6 @@ export function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;

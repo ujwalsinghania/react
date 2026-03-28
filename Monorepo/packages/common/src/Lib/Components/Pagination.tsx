@@ -1,19 +1,19 @@
-import React from 'react';
-import { cn } from '../utils/cn';
+// utils
+import { cn } from '../Utils/Cn';
 
 export interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
-  className?: string; // Add optional className prop
+  className?: string;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({
+export const Pagination = ({
   currentPage,
   totalPages,
   onPageChange,
   className,
-}) => {
+}: PaginationProps) => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
@@ -62,4 +62,4 @@ export const Pagination: React.FC<PaginationProps> = ({
       </button>
     </div>
   );
-};
+}

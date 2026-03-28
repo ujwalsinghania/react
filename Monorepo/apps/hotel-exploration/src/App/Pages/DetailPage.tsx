@@ -1,10 +1,12 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { HOTELS } from '../data';
+// router
+import { useNavigate } from 'react-router-dom';
+
+// hooks
+import { useHotelDetail } from '../Hooks/useHotelDetail';
 
 const DetailPage = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
-  const hotel = HOTELS.find((h) => h.id === id);
+  const { hotel } = useHotelDetail();
 
   if (!hotel) {
     return (

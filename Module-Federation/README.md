@@ -17,6 +17,34 @@ This project implements a sophisticated **Micro-Frontend (MFE)** pattern using a
 
 ---
 
+## 📸 Screenshots
+
+<table width="100%">
+  <tr>
+    <td width="50%">
+      <img src="./screenshots/landing.png" width="100%" />
+      <p align="center"><b>Admin Host</b></p>
+    </td>
+    <td width="50%">
+      <img src="./screenshots/admin-products.png" width="100%" />
+      <p align="center"><b>Product Catalog</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./screenshots/admin-create.png" width="100%" />
+      <p align="center"><b>Admin: Create Product</b></p>
+    </td>
+    <td width="50%">
+      <img src="./screenshots/insights-dashboard.png" width="100%" />
+      <p align="center"><b>Performance Insights</b></p>
+    </td>
+  </tr>
+</table>
+
+---
+
+
 ## 🔑 Key Benefits of Module Federation
 
 This architecture provides several production-grade advantages over traditional micro-frontend approaches like iframes or separate SPAs:
@@ -122,29 +150,3 @@ npm run build
 
 ---
 
-## 📝 Definition of Done
-
-- **Zero CSS Collisions:** Ensured path-safe styling across micro-frontend isolation.
-- **Responsive Layout:** Consistent experience from mobile viewports to ultra-wide displays.
-- **Lazy Initialization:** Route-level chunk splitting for optimized Initial Page Load (LCP).
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-  <img src="./screenshots/landing.png" width="40%" alt="Platform Overview" />
-  <img src="./screenshots/admin-products.png" width="40%" alt="Administrative Dashboard - Product Catalog" />
-  <br>
-  <p align="center" style="display: flex; justify-content: space-around; width: 80%; margin: 4px auto 16px;">
-    <span><b>Platform Overview</b></span>
-    <span><b>Admin: Product Catalog</b></span>
-  </p>
-  <img src="./screenshots/admin-create.png" width="40%" alt="Administrative Dashboard - Create Product" />
-  <img src="./screenshots/insights-dashboard.png" width="40%" alt="Performance Insights" />
-  <br>
-  <p align="center" style="display: flex; justify-content: space-around; width: 80%; margin: 4px auto;">
-    <span><b>Admin: Create Product</b></span>
-    <span><b>Performance Insights</b></span>
-  </p>
-</div>

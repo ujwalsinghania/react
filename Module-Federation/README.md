@@ -17,33 +17,6 @@ This project implements a sophisticated **Micro-Frontend (MFE)** pattern using a
 
 ---
 
-## 🏗️ Architecture & Topology
-
-The system follows a classic **Hub-and-Spoke** model. The **Host (Shell)** act as the orchestrator, managing global routing and auth, while several **Remotes** act as pluggable feature modules.
-
-```mermaid
-graph TD
-    Host["Host Shell (:4200)"]
-    Admin["Admin MFE (:4201)"]
-    Insights["Insights MFE (:4202)"]
-    SharedUI["@repo/ui (Shared)"]
-    SharedUtils["@repo/utils (Shared)"]
-
-    Host -->|Consumes| Admin
-    Host -->|Consumes| Insights
-    Host -.->|Exposes Auth/Header| Admin
-    Host -.->|Exposes Auth/Header| Insights
-
-    Admin --> SharedUI
-    Insights --> SharedUI
-    Host --> SharedUI
-```
-
-- **Zero-Rebuild Interop:** Updates to shared packages are reflected across the federated ecosystem without requiring a full rebuild of the consumers.
-- **Shared Dependencies:** Singletons like `react` and `react-router-dom` are loaded once by the host and shared with all remotes to minimize the browser footprint.
-
----
-
 ## 🔑 Key Benefits of Module Federation
 
 This architecture provides several production-grade advantages over traditional micro-frontend approaches like iframes or separate SPAs:
@@ -159,14 +132,19 @@ npm run build
 
 ## 📸 Screenshots
 
-### Platform Overview
-
-![Landing Page](docs/screenshots/landing.png)
-
-### Administrative Dashboard
-
-![Product Management](docs/screenshots/admin-products.png)
-
-### Performance Insights
-
-![Analytics Dashboard](docs/screenshots/insights-dashboard.png)
+<div align="center">
+  <img src="./screenshots/landing.png" width="40%" alt="Platform Overview" />
+  <img src="./screenshots/admin-products.png" width="40%" alt="Administrative Dashboard - Product Catalog" />
+  <br>
+  <p align="center" style="display: flex; justify-content: space-around; width: 80%; margin: 4px auto 16px;">
+    <span><b>Platform Overview</b></span>
+    <span><b>Admin: Product Catalog</b></span>
+  </p>
+  <img src="./screenshots/admin-create.png" width="40%" alt="Administrative Dashboard - Create Product" />
+  <img src="./screenshots/insights-dashboard.png" width="40%" alt="Performance Insights" />
+  <br>
+  <p align="center" style="display: flex; justify-content: space-around; width: 80%; margin: 4px auto;">
+    <span><b>Admin: Create Product</b></span>
+    <span><b>Performance Insights</b></span>
+  </p>
+</div>

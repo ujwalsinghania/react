@@ -111,26 +111,10 @@ npx nx run-many -t build
 
 ## Screenshots
 
-### Hotel Exploration App
+| Hotel Listing | Hotel Detail |
+|---------------|--------------|
+| <img src="./screenshots/hotel-listing.png" width="300" alt="Hotel listing page" /> | <img src="./screenshots/hotel-detail.png" width="300" alt="Hotel detail page" /> |
 
-**Listing Page**
-
-<img src="./screenshots/hotel-listing.png" width="600" alt="Hotel listing page" />   
-
-**Hotel Detail Page**
-
-<img src="./screenshots/hotel-detail.png" width="600" alt="Hotel detail page" />  
-
----
-
-### Admin Dashboard
-
-**Login Page**
-
-<img src="./screenshots/admin-login.png" width="600" alt="Admin login page" />   
-
-**Dashboard — Create Listing**
-
-<img src="./screenshots/admin-dashboard.png" width="600" alt="Admin dashboard" />  
-
----
+| Admin Login | Admin Dashboard |
+|-------------|-----------------|
+| <img src="./screenshots/admin-login.png" width="300" alt="Admin login page" /> | <img src="./screenshots/admin-dashboard.png" width="300" alt="Admin dashboard" /> |

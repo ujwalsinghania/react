@@ -4,6 +4,40 @@ A monorepo built with **Nx** containing two React applications and a shared comp
 
 ---
 
+## Technical Advantages of Monorepo (React)
+
+- **Shared UI component library**  
+  Build and reuse common React components (Buttons, Cards, Modals) across multiple apps (web, admin, mobile) without publishing separate packages.
+
+- **Code sharing without duplication**  
+  Share hooks, API clients, utilities, and business logic across apps, ensuring consistency and reducing repeated code.
+
+- **Single source of truth**  
+  All applications and packages live in one repository, making it easier to manage changes, dependencies, and architecture.
+
+- **Consistent tooling & configuration**  
+  Centralized setup for ESLint, TypeScript, Jest, and Prettier ensures uniform code quality across all React projects.
+
+- **Simplified dependency management**  
+  One `node_modules` and a single React version prevent version conflicts and issues like duplicate React instances.
+
+- **Faster development & iteration**  
+  Changes to shared components or logic reflect instantly across all apps, speeding up development cycles.
+
+- **Atomic cross-project changes**  
+  Update multiple apps and shared libraries in a single commit, keeping everything in sync.
+
+- **Easier large-scale refactoring**  
+  With all code in one place, refactoring components, hooks, or APIs across apps becomes safer and faster (especially with TypeScript).
+
+- **Better developer experience**  
+  Reduced context switching between repos and easier onboarding with a unified project structure.
+
+- **Supports scalable architecture**  
+  Enables structured separation (apps, shared libraries, features) for growing React applications.
+
+---
+
 ## Structure
 
 ```
@@ -40,6 +74,31 @@ A shared library imported by both apps as `@local/common`. It exports:
 - `titleCase`, `slugify` — string helpers
 - `formatDate` — date formatting
 - `unique`, `chunk` — array helpers
+
+---
+
+## Screenshots
+
+| Hotel Listing | Hotel Detail |
+|---------------|--------------|
+| <img src="./screenshots/hotel-listing.png" width="400" alt="Hotel listing page" /> | <img src="./screenshots/hotel-detail.png" width="400" alt="Hotel detail page" /> |
+
+| Admin Login | Admin Dashboard |
+|-------------|-----------------|
+| <img src="./screenshots/admin-login.png" width="400" alt="Admin login page" /> | <img src="./screenshots/admin-dashboard.png" width="400" alt="Admin dashboard" /> |
+
+---
+
+## Tech Stack
+
+| Tool | Role |
+|------|------|
+| [Nx](https://nx.dev) | Monorepo tooling, task orchestration, build caching |
+| React 19 | UI framework |
+| TypeScript | Type safety across all packages and apps |
+| Vite | Dev server and bundler |
+| Tailwind CSS | Styling |
+| React Router | Client-side routing (hotel-exploration) |
 
 ---
 
@@ -81,19 +140,6 @@ npx nx graph
 
 ---
 
-## Tech Stack
-
-| Tool | Role |
-|------|------|
-| [Nx](https://nx.dev) | Monorepo tooling, task orchestration, build caching |
-| React 19 | UI framework |
-| TypeScript | Type safety across all packages and apps |
-| Vite | Dev server and bundler |
-| Tailwind CSS | Styling |
-| React Router | Client-side routing (hotel-exploration) |
-
----
-
 ## Getting Started
 
 ```sh
@@ -107,14 +153,3 @@ npx nx serve admin-dashboard
 # Build everything
 npx nx run-many -t build
 ```
----
-
-## Screenshots
-
-| Hotel Listing | Hotel Detail |
-|---------------|--------------|
-| <img src="./screenshots/hotel-listing.png" width="300" alt="Hotel listing page" /> | <img src="./screenshots/hotel-detail.png" width="300" alt="Hotel detail page" /> |
-
-| Admin Login | Admin Dashboard |
-|-------------|-----------------|
-| <img src="./screenshots/admin-login.png" width="300" alt="Admin login page" /> | <img src="./screenshots/admin-dashboard.png" width="300" alt="Admin dashboard" /> |
